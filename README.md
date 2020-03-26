@@ -34,17 +34,18 @@ Result
 ## Get datadog-env-secret
 
 ```sh
-$ go get github.com/Sho2010/datadog-env-secret
 
+# Download binary or go get github.com/Sho2010/datadog-env-secret
+$ curl -L https://github.com/Sho2010/datadog-env-secret/releases/download/v1.0/datadog-env-secret_linux_amd64.tar.gz | tar -xvzf -
 
 # On Linux, the executable set as secret_backend_command must:
 #
 # Belong to the same user running the Agent (dd-agent by default, or root inside a container).
 # Have no rights for group or other.
 # Have at least exec rights for the owner.
-#
-$ chown dd-agent:dd-agent ${GOPATH}/bin/datadog-env-secret
-$ chmod 700 ${GOPATH}/bin/datadog-env-secret
+
+$ chown dd-agent:dd-agent datadog-env-secret
+$ chmod 700 datadog-env-secret
 ```
 
 ## Update your DD agent config
